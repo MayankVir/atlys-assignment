@@ -1,0 +1,19 @@
+.input-container {
+  display: flex;
+  justify-content: start;
+  gap: 4px;
+  align-items: start;
+  flex-direction: column;
+}
+
+.input-container > label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.input-container > input {
+  border: 1px solid rgba(211, 211, 211, 1);
+  padding: 9px 11px;
+  border-radius: 8px;
+  width: 100%;
+}

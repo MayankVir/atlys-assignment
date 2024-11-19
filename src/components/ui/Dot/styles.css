@@ -1,0 +1,17 @@
+.dot {
+  border: 2px solid rgba(219, 219, 219, 1);
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.inner-dot {
+  height: 7px;
+  width: 7px;
+  background: rgba(102, 163, 255, 1);
+  border-radius: 100%;
+}
