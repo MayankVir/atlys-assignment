@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useRef, useContext } from "react";
+import FunctionCard from "./components/FunctionCard/FunctionCard";
+import ConnectionLines from "./components/ConnectionLines";
+import { FunctionData } from "./types/types";
+import "./App.css";
+import AppContextProvider, { AppContext } from "./context/appContext";
 
-function App() {
+const App: React.FC = () => {
+  const { functions } = useContext(AppContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="cards-container">
+        {functions.map((func) => (
+          <FunctionCard
+            key={func.id}
+            id={func.id}
+            equation={func.equation}
+            input={func.input}
+            output={func.output}
+          />
+        ))}
+      </div>
+      <ConnectionLines functions={functions} />
     </div>
   );
-}
+};
 
 export default App;
